@@ -61,7 +61,11 @@ function cacheData(content) {
 
 		mediaObject.link = tagContent.link;
 		mediaObject.tags = tagContent.tags;
-		mediaObject.caption = tagContent.caption.text;
+		if (tagContent.caption != null) {
+			mediaObject.caption = tagContent.caption.text;
+		} else {
+			mediaObject.caption = "Oops ! No Description";
+		}
 		mediaObject.comments = tagContent.comments;
 		mediaObject.likes = tagContent.likes;
 		mediaObject.imageUrls = tagContent.images;
