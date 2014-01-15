@@ -86,14 +86,14 @@ function loadNextPage() {
 	$("#tagName").empty().append(tagEle); 
 
 	// BOX2 Tags and Desc
-	var desc = "<h5>Description: <span class=\"label label-info\"></span>" +firstMedia.caption+ "</h5>";
+	var desc = "<span class=\"label label-info\">Description </span> " +firstMedia.caption;
 	$("#description").empty().append(desc); // Desc
 	// Tags
 	var tagsText = "";
 	$.each(firstMedia.tags, function(index, tag) {
 		tagsText = tagsText + "  ";
 	});
-	var tagHtmlEle = "<h5>Tags : <span class=\"label label-primary\"></span>" +tagsText+ "</h5>";
+	var tagHtmlEle = "<span class=\"label label-primary\">Tags</span>" +tagsText;
 	$("#tags").empty().append(tagHtmlEle); // Tags		
 	
 
@@ -104,6 +104,8 @@ function loadNextPage() {
 		$.each(comments.data, function(index, comment) {
 			var comment_div = "<div class=\"panel panel-info\">"
 				+ "<div class=\"panel-body\">" + "<div class=\"row\">"
+				+ "<img src=\"" + comment.from.profile_picture
+				+ "\" width=\10%\">" + "</div>" + "<div class=\"row\">"
 				+ comment.text + "</div>" + "</div>" + "</div>";
 			
 			$("#comments").append(comment_div);
@@ -120,7 +122,7 @@ function loadNextPage() {
 			var profile_div = "<div class=\"panel panel-info\">"
 					+ "<div class=\"panel-body\">" + "<div class=\"row\">"
 					+ "<img src=\"" + like.profile_picture
-					+ "\" width=\"15%\">" + "</div>" + "<div class=\"row\">"
+					+ "\" width=\10%\">" + "</div>" + "<div class=\"row\">"
 					+ like.full_name + "</div>" + "</div>" + "</div>";
 
 			$("#likesDiv").append(profile_div);
@@ -130,19 +132,19 @@ function loadNextPage() {
 	}
 
 	// BOX 4,5,6 - > Images
-	var low_resol_image = firstMedia.imageUrls.low_resolution;
+	/*var low_resol_image = firstMedia.imageUrls.low_resolution;
 	//console.log("<img src=\"" + low_resol_image.url + "\" width=\"20%\">");
 	$("#image_low_resolution").empty().append(
 			"<img src=\"" + low_resol_image.url + "\" width=\"30%\">");
-	var standard_resol_image = firstMedia.imageUrls.standard_resolution;
+	*/var standard_resol_image = firstMedia.imageUrls.standard_resolution;
 	$("#image_standard").empty().append(
-			"<img src=\"" + standard_resol_image.url + "\" width=\"30%\">");
-	var thumbnail_image = firstMedia.imageUrls.thumbnail;
+			"<img src=\"" + standard_resol_image.url + "\" width=\"100%\">");
+	/*var thumbnail_image = firstMedia.imageUrls.thumbnail;
 	$("#image_thumbnail").empty().append(
 			"<img src=\"" + thumbnail_image.url + "\" width=\"30%\">");
-
+*/
 	// BOX 7 -> User info
-	$("#user_info_profile").empty().append("<img src=\"" + firstMedia.userInfo.profile_picture + "\" width=\"20%\">");
+	$("#user_info_profile").empty().append("<img src=\"" + firstMedia.userInfo.profile_picture + "\" width=\"25%\">");
 	$("#user_info_name").empty().append(firstMedia.userInfo.full_name);
 }
 
@@ -159,5 +161,5 @@ function getRecentMediaByTag(tag) {
 // Assign to instance field
 Instagram.recentMediaByTag = getRecentMediaByTag;
 
-// Call method by passing tag 'java'
-Instagram.recentMediaByTag('java');
+// Call method by passing tag 'travel'
+Instagram.recentMediaByTag('travel');
