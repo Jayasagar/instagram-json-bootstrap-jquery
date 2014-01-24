@@ -157,7 +157,7 @@ function getRecentMediaByTag(tag) {
 	var url = "https://api.instagram.com/v1/tags/"
 			+ tag
 			+ "/media/recent"
-			+ "?access_token=539668504.2c39d74.5b6021beec4048f0bdba845c38919103&client_id=97bf64bca67344afbbe8ea64caa8e617";
+			+ "?callback=?&access_token=539668504.2c39d74.5b6021beec4048f0bdba845c38919103&client_id=97bf64bca67344afbbe8ea64caa8e617";
 
 	$.getJSON(url, cacheData);
 }
