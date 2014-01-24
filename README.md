@@ -8,3 +8,5 @@ This project is going to read json data returned by Instagram API https://api.in
 Note: If you run this sample app(index.html) directly from file system without hosting into server and if you use Chrome browser as test browser, you need to run chrome with disable security option from console. 
 i.e. C:\Program Files (x86)\Google\Chrome\Application>chrome.exe --disable-web-security.
 
+Still, If you are unable to results in Crome Browser, Please refer here for more info on Chrome issue 
+http://stackoverflow.com/questions/4208530/xmlhttprequest-origin-null-is-not-allowed-access-control-access-allow-for-file.
